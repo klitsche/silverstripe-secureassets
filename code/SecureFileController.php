@@ -84,7 +84,7 @@ class SecureFileController extends Controller {
 		}
 
 		// Clear PHP buffer, otherwise the script will try to allocate memory for entire file.
-		ob_end_flush();
+		@ob_end_flush();
 		// Prevent blocking of the session file by PHP. Without this the user can't visit another page of the same
 		// website during download (see http://konrness.com/php5/how-to-prevent-blocking-php-requests/)
 		session_write_close();
